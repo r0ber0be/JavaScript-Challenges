@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Desafio - Escada</title>
+
+    <script>
+      function escada(numero) {
+        var arrayEscada = [];
+        for (var i = 1; i <= numero; i++) {
+          //adiciona numero-i de espacos a variavel
+          //se numero = 5, i = 1, então 5-1 é igual a 4 vezes
+          var espaco = " ".repeat(numero - i);
+
+          var degrau = "#".repeat(i);
+          arrayEscada.push(espaco + degrau);
+        }
+        return arrayEscada;
+      }
+      console.log(escada(5));
+    </script>
+    <body></body>
+  </head>
+</html>

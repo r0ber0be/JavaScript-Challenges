@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Desafio - Mais ou menos</title>
+    <meta charset="UTF-8" />
+
+    <script>
+      function maisOuMenos(arrayNumeros) {
+        var arrayPorcentagem = [];
+        var numPositivo = 0;
+        var numNulo = 0;
+        var numNegativo = 0;
+
+        for (var i = 0; i < arrayNumeros.length; i++) {
+          if (arrayNumeros[i] > 0) {
+            numPositivo++;
+          }
+          if (arrayNumeros[i] == 0) {
+            numNulo++;
+          }
+          if (arrayNumeros[i] < 0) {
+            numNegativo++;
+          }
+        }
+        //quantidade x dividida por 100% do valor
+        numPositivo /= arrayNumeros.length;
+        numNulo /= arrayNumeros.length;
+        numNegativo /= arrayNumeros.length;
+
+        arrayPorcentagem.push(numPositivo, numNulo, numNegativo);
+        return arrayPorcentagem;
+      }
+
+      console.log(maisOuMenos([1, 2, 0, -1]));
+      console.log(maisOuMenos([0, 0, 0, 0]));
+    </script>
+  </head>
+  <body></body>
+</html>

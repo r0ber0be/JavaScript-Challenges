@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Desafio - Fatorial</title>
+
+    <script>
+      function fatorial(numero) {
+        //decrementando a var numero obterá o valor máximo de numero até 2
+        for (var auxFatorial = 1; numero > 1; numero--) {
+          auxFatorial *= numero;
+        }
+        return auxFatorial;
+      }
+      console.log(fatorial(5));
+    </script>
+    <body></body>
+  </head>
+</html>

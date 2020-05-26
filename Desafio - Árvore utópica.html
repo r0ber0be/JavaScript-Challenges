@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Desafio - Árvore Utópica</title>
+
+    <script>
+      function alturaArvoreUtopica(totalDeCiclos) {
+        var altura = 0;
+        for (var i = 0; i <= totalDeCiclos; i++) {
+          //sempre que o ciclo for par, 1 é adicionado
+          //para altura da árvore
+          if (i % 2 == 0) {
+            altura += 1;
+          }
+          //quando o ciclo for ímpar, multiplica-se a altura
+          //da árvore por 2
+          else altura *= 2;
+        }
+        return altura;
+      }
+      console.log(alturaArvoreUtopica(3));
+
+      function passoAPasso() {
+        for (var i = 0; i < 5; i++) {
+          console.log(i);
+        }
+      }
+      passoAPasso();
+    </script>
+    <body></body>
+  </head>
+</html>

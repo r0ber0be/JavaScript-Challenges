@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Desafio - Professora furiosa</title>
+
+    <script>
+      function acontece(arrayAlunos, qtdMinima) {
+        var contaAlunos = 0;
+        //quantidade de alunos que chegaram antes ou na hora da aula
+        for (var i = 0; i < arrayAlunos.length; i++) {
+          if (arrayAlunos[i] <= 0) {
+            contaAlunos++;
+          }
+        }
+        //retorna true se tem alunos o suficiente
+        if (contaAlunos >= qtdMinima) {
+          return true;
+        } else return false;
+      }
+      //valor nulo significa que o aluno foi pontual
+      //valor negativo que chegou cedo
+      //valor positivo que está atrasado
+      var alunosDaSegunda = [10, -5, 3, 0, 0];
+      var alunosDaTerca = [0, -5, 3, 0, 0];
+      var alunosDaQuarta = [10, -5, 3, 10, 0];
+      //o segundo parâmetro representa o total minimo
+      //de alunos presentes necessários para ter aula
+      console.log(acontece(alunosDaSegunda, 3));
+      console.log(acontece(alunosDaTerca, 3));
+      console.log(acontece(alunosDaQuarta, 3));
+
+      //arrayAlunos = array dos alunos dos dias da semana
+      function aberturas(arrayAlunos, qtdMinima) {
+        var segunda = 0;
+        var terca = 0;
+        var quarta = 0;
+
+        for (var i = 0; i < 3; i++) {
+          for (var j = 0; j < 5; j++) {
+            if (arrayAlunos[i][j] <= 0) {
+              if (i == 0) {
+                segunda++;
+              } else if (i == 1) {
+                terca++;
+              } else if (i == 2) {
+                quarta++;
+              }
+            }
+          }
+        }
+        //verifica se qtdMinima é atingida e
+        //adiciona no array os valores true
+        //ou false, dependendo do caso
+        var arrayResposta = [];
+        if (segunda >= qtdMinima) {
+          arrayResposta.push(true);
+        } else arrayResposta.push(false);
+
+        if (terca >= qtdMinima) {
+          arrayResposta.push(true);
+        } else arrayResposta.push(false);
+
+        if (quarta >= qtdMinima) {
+          arrayResposta.push(true);
+        } else arrayResposta.push(false);
+
+        return arrayResposta;
+      }
+
+      console.log(
+        aberturas([alunosDaSegunda, alunosDaTerca, alunosDaQuarta], 4)
+      );
+    </script>
+    <body></body>
+  </head>
+</html>
